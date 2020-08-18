@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbols</title>
+</head>
+<body>
+    <script>
+        const alex = Symbol('Alex'); 
+        const person = Symbol('Alex');
+
+        const classRoom  = {
+            [Symbol('Mark')]: { grade: 50, gender: 'male'},
+            [Symbol('Olivia')]: { grade: 80, gender: 'female'},
+            [Symbol('Olivia')]: { grade: 80, gender: 'female'},
+        }
+
+        //symbols are innumerable so you can't loop over them.
+        //to access symbols use object method Object.getOwnPropertySymbols
+
+        const syms = Object.getOwnPropertySymbols(classRoom);
+        const data = syms.map(sym => classRoom[sym]);
+        console.log(data);
+
+    </script>
+</body>
+</html>

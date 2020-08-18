@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const person = {
+        //     name: 'Alex',
+        //     job: 'Dev',
+        //     city: 'Seattle',
+        //     bio: 'Im very cool guy'
+        // };
+        
+
+        // const markup = `
+        // <div class = "person">
+        //     <h2> 
+        //             ${person.name}
+        //             <span class="job"> ${person.job}</span>
+        //         </h2>
+        //         <p class = "location"> ${person.city}</p>
+        //         <p class = "bio"> ${person.bio}</p>
+        // </div>    
+        // `;
+
+        // document.body.innerHTML = markup;
+
+
+
+
+        // const dogs = [
+        //     { name: 'Gera', age: 3},
+        //     { name: 'Kris', age: 10},
+        //     { name: 'Sunny', age:4},
+        // ];
+
+        // const dogmarkup = `
+        //     <ul class= "dogs">
+        //         ${dogs.map(dog => `<li>${dog.name} is ${dog.age * 7}</li>`).join('')}
+        //     </ul>
+        // `;
+        
+        // document.body.innerHTML = dogmarkup;
+        // console.log(dogmarkup);
+
+
+
+        // const song = {
+        //     name: 'Blinding Lights',
+        //     artist: 'The Weeknd',
+        //     album: 'After Hours'
+        // };
+
+        // const songmarkup = `
+        //     <div class= "song">
+        //         <p>
+        //             ${song.name} - ${song.artist}
+        //             ${song.album ? `(Album: ${song.album})` : ''} 
+        //         </p>
+        //     </div>
+        // `;
+
+        // document.body.innerHTML = songmarkup;
+
+        const beer = {
+            name: 'Manny\'s',
+            brewery: 'Georgetown',
+            keywords: ['pale ale', 'citrusy', 'light']
+        };
+
+        function renderKeywords(keywords) {
+            return `
+                <ul>
+                    ${keywords.map(keyword => `<li> ${keyword}</li>`).join('')}
+                </ul>
+            `;
+        }
+
+        const beermarkup = `
+            <div class="beer">
+                <h2>${beer.name}</h2>
+                <p class="brewery">${beer.brewery}</p>
+                ${renderKeywords(beer.keywords)}
+            </div>
+        `;
+        document.body.innerHTML = beermarkup;
+
+    </script>
+</body>
+</html>

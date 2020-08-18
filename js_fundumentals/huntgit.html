@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var user;
+            var id;
+            var name;
+            $.get("https://api.github.com/users/sashavinocurov",function(data){
+                user = data.login
+                console.log(data.login);
+                id = data.id
+                console.log(data.id);
+                name = data.name
+                console.log(data.name)
+            });
+        });
+    </script>
+    <title>Sasha</title>
+</head>
+<body>
+    <div class="user"></div>
+
+    <script>
+        $("div").append($('id'));
+    </script>
+</body>
+</html>

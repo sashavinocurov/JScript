@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .hl{
+            background: #ffc600;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="bio">
+
+    </div>
+    <script>
+        // function highlight(strings, ...values) {
+        //     let str = '';
+        //     strings.forEach((string, i) => {
+        //         str += string + (values[i] || '');
+        //         str += `${string} <span contenteditable class="hl"> ${values[i] || ''}</span>`;
+        //     });
+        //     return str;
+        // }
+        // const name = 'Kris';
+        // const age = 100;
+        // const sentence = highlight `My dog's name is ${name} and he is ${age} years old`;
+        // document.body.innerHTML = sentence;
+        // console.log(sentence);
+
+
+
+        const dict = {
+            HTML: 'Hyper Text Markup Language',
+            CSS: 'Cascading Style Sheets',
+            JS: 'JavaScript'
+        };
+
+        function addAbbreviations(strings, ...values) {
+            const abbreviated = values.map(value => {
+                if(dict[value]) {
+                    return `<abbr title="${dict[value]}">${value}</abbr>`
+                }
+                return value;
+            });
+            
+            return strings.reduce((sentence, string, i) => {
+                return `${sentence}${string}${abbreviated[i] || ''}`;
+            }, '');
+        }
+
+        const first = 'Alexandr';
+        const last = 'Vinocurov';
+        const sentence = addAbbreviations`Hello my name is ${first} ${last} and I love to code ${'HTML'}, ${'CSS'} and ${'JS'}`;
+
+        const bio = document.querySelector('.bio');
+        const p = document.createElement('tagName');
+        p.innerHTML = sentence;
+        bio.appendChild(p);
+
+    </script>
+</body>
+</html>

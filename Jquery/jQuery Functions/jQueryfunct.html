@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>My jQuery Function assignment</title>
+
+    <script>
+
+        $(document).ready(function (){
+            console.log('document is ready');
+
+            $('#clickbutton').click(function(){
+                $('#clickh1').css('background-color', 'red');
+                $('#clickp').hide();
+                console.log('hide all paragraphs and change background for h1')
+            })
+
+            $('h2').hover(function(){
+                $('h3').fadeOut(500);
+                $('h3').fadeIn(100);}, function(){
+                    $('h3').text('untoggle')
+
+            });
+        })
+
+    </script>
+</head>
+
+<body>
+    <div class="click">
+        <h1 id="clickh1">Click me assignment</h1>
+        <button id="clickbutton">Click me!</button>
+        <p id="clickp">When you going to click the button paragraph text will disappear and h1 would get a red
+            background!</p>
+    </div>
+
+    <div class="toggle">
+        <h2 class="toggleh1">Toggle Toggle Toggle</h2>
+        <h2 class="toggleh1">Toggle Toggle Toggle</h2>
+        <h2 class="toggleh1">Toggle Toggle Toggle</h2>
+        <h3 id="toggleh2"> That's whats going to be toggled.</h3>
+        <button id="togglebutton"> Press to toggle</button>
+
+    </div>
+
+</body>
+
+</html>
